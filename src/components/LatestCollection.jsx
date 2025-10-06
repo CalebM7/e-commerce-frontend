@@ -17,7 +17,7 @@ const LatestCollection = () => {
   }, [products]);
 
   return (
-    <div className="my-16">
+    <div id="collection" className="my-24">
       <div className="text-center mb-8">
         <Title text1="LATEST" text2="COLLECTION" />
         <p className="text-gray-500 mt-2">Discover our newest arrivals</p>
