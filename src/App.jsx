@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import Collection from './pages/Collection';
 import About from './pages/About';
@@ -15,6 +17,7 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <ToastContainer />
       {/*Removed the main padding to allow navbar to be full-width*/}
       <Navbar />
         <Routes>

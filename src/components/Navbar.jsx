@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { assets } from '../assets/frontend_assets/assets';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("home");
-  const cartCount = 0; // Placeholder
+  const { getCartCount } = useContext(ShopContext);
   const location = useLocation();
 
   // Helper function to render a navigation item
@@ -59,7 +60,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} alt="cart" className="w-7" />
           <div className="absolute -top-1 -right-2 w-4 h-4 flex items-center justify-center text-xs text-white bg-red-500 rounded-full">
-            {cartCount}
+            {getCartCount()}
           </div>
         </Link>
         <img onClick={() => setIsMenuOpen(true)} src={assets.menu_icon} alt="menu" className="w-6 cursor-pointer sm:hidden" />
